@@ -2,7 +2,7 @@
 % Please edit documentation in R/scale_returns.R
 \name{scale_returns}
 \alias{scale_returns}
-\title{Title}
+\title{Scale Returns}
 \usage{
 scale_returns(R, target = NA, ...)
 }
@@ -10,5 +10,5 @@ scale_returns(R, target = NA, ...)
 \item{...}{}
 }
 \description{
-Title
+Scale Returns
 }

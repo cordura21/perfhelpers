@@ -1,7 +1,7 @@
-#' Title
+#' Scale Returns
 #'
 #' @param R
-#' @param geometric
+#' @param target
 #' @param ...
 #'
 #' @return
