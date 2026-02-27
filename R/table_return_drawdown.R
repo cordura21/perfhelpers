@@ -27,6 +27,7 @@ table_return_drawdown <- function(R, geometric = TRUE, ...) {
     start = xts::first(index(R)),
     end = xts::last(index(R)),
     length = nrow(R),
+    nas = colSums(is.na(R)),
     periodicity =as.vector( xts::periodicity(R)$scale),
     row.names         = if (is.null(colnames(R))) "Asset" else colnames(R)
   )
