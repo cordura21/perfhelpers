@@ -10,14 +10,18 @@
 #' @examples
 scale_returns <- function(R, target = NA, ...) {
   # ... your code ...
-  curr_vol <- sd.annualized(R)
+  curr_vol <- PerformanceAnalytics::sd.annualized(R)
   vol_ratio <- target / as.vector(curr_vol)
-  R_scaled <- xts(t(t(R) * vol_ratio), index(R))
+  R_scaled <- xts::xts(t(t(R) * vol_ratio), xts::index(R))
   R_scaled
 
 }
 
-
-xManagers <- scale_returns(managers,.14)
-managers / xManagers
-sd.annualized(managers)
+#
+# xManagers <- scale_returns(managers,.14)
+# managers / xManagers
+# sd.annualized(managers)
+#
+# xxx <- merge(managers[,9],xManagers[,9])
+# charts.RollingPerformance(xxx,width = 36)
+#
