@@ -17,6 +17,7 @@
 #' return_stats(R)
 return_stats <- function(R, geometric = TRUE, ...) {
   ann_ret <- PerformanceAnalytics::Return.annualized(R, geometric = geometric, ...)
+  cum_ret <- PerformanceAnalytics::Return.cumulative(R, geometric = geometric, ...)
   mdd     <- PerformanceAnalytics::maxDrawdown(R, ...)
   sd <- PerformanceAnalytics::sd.annualized(R,...)
   sr <- PerformanceAnalytics::SharpeRatio.annualized(R,...)
@@ -28,6 +29,7 @@ return_stats <- function(R, geometric = TRUE, ...) {
     SD.Annualized = as.vector(sd),
     sharpe = as.vector(sr),
     calmar = as.vector(calmar),
+    Cum.Return = as.vector(cum_ret),
     start = xts::first(zoo::index(R)),
     end = xts::last(zoo::index(R)),
     length = nrow(R),
